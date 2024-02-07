@@ -12,8 +12,8 @@ import { intro, outro } from "@clack/prompts";
 
 async function createReactApp(appName: string, options: TOptions) {
   // Main Entry Point To The Command
-  const config = await getUserPrompts({ appName, ...options });
   intro(color.heading("Create Vite App"));
+  const config = await getUserPrompts({ appName, ...options });
   await GenerateViteApp(config);
   process.chdir(config.appName || "");
   await InstallAndGenerateTailwind(config);
